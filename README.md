@@ -1,6 +1,6 @@
 # collinmurch kickstart.nvim
 
-Initially forked from [tjdevries/kickstart.nvim](https://github.com/tjdevries/kickstart.nvim)
+Initially forked from [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) (formerly tjdevries/kickstart.nvim)
 
 Requirements:
 
