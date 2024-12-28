@@ -1,16 +1,21 @@
 return {
 	"stevearc/oil.nvim",
+	event = "VimEnter",
+	dependencies = {
+		{ "echasnovski/mini.icons", opts = {} },
+	},
 	opts = {
 		view_options = {
 			show_hidden = true,
 		},
 	},
-	dependencies = {
-		{ "echasnovski/mini.icons", opts = {} },
-	},
-	init = function()
-		vim.keymap.set("n", "\\", function()
-			require("oil").toggle_float()
-		end, { desc = "Toggle oil" })
-	end,
+	keys = {
+        {
+            "\\",
+            function()
+                require("oil").toggle_float()
+            end,
+            desc = "Toggle Oil file explorer",
+        },
+    },
 }
