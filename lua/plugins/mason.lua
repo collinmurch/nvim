@@ -6,16 +6,17 @@ return {
     config = function()
         require("mason").setup()
         require("mason-tool-installer").setup({
-        ensure_installed = {
-            -- LSPs
-            "gopls",
-            "ruff",
-            "zls",
+            ensure_installed = {
+                -- LSPs
+                "gopls",
+                "ruff",
+                "zls",
 
-            -- Formatters
-            "stylua",
-            "jq"
-        }
+                -- Formatters
+                "gofumpt",
+                "stylua",
+                "jq"
+            }
         })
     end,
 }

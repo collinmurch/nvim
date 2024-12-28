@@ -19,3 +19,7 @@ map("n", "<leader>y", function()
 	vim.fn.setreg("+", vim.fn.getreg('"'))
 	vim.api.nvim_out_write("Copied to system clipboard\n")
 end, { desc = "Copy selection to clipboard" })
+
+map('n', '<leader>,', function()
+    vim.opt.list = not vim.opt.list._value
+end, { desc = 'Toggle whitespace characters' })
