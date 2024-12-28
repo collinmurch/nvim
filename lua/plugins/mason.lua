@@ -10,6 +10,7 @@ return {
             -- LSPs
             "gopls",
             "ruff",
+            "zls",
 
             -- Formatters
             "stylua",
