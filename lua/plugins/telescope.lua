@@ -14,10 +14,10 @@ return {
         { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Open file picker" },
         { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Open buffer picker" },
         { "<leader>s", "<cmd>Telescope treesitter<cr>", desc = "Open symbol picker" },
-        { "<leader>d", "<cmd>Telescope diagnostics<cr>", desc = "Open diagnostic picker" },
+        { "<leader>o", "<cmd>Telescope diagnostics<cr>", desc = "Open diagnostic picker" },
         { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Global search in workspace folder" },
         {
-            "<leader>o",
+            "<leader>?",
             function()
                 require("telescope.builtin").live_grep({
                     grep_open_files = true,
