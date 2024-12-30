@@ -31,8 +31,6 @@ return {
 			vim.keymap.set("n", "<leader>db", dap.step_back, { desc = "Step back" })
 			vim.keymap.set("n", "<leader>dr", dap.restart, { desc = "Restart" })
 
-			vim.fn.sign_define('DapBreakpoint', { text='◌', texthl='', linehl='', numhl='' })
-
 			-- DAP listeners
 			dap.listeners.before.attach.dapui_config = function()
 				ui.open()
@@ -46,6 +44,20 @@ return {
 			dap.listeners.before.event_exited.dapui_config = function()
 				ui.close()
 			end
+
+			vim.fn.sign_define("DapBreakpoint", { text = "◌" })
+
+			-- Override DAP UI highlight groups to remove background highlighting
+			vim.api.nvim_set_hl(0, "WinBar", { link = "Normal" })
+			vim.api.nvim_set_hl(0, "WinBarNC", { link = "WinBar" })
+			vim.api.nvim_set_hl(0, "DapUIPlayPauseNC", { link = "DapUIPlayPause" })
+			vim.api.nvim_set_hl(0, "DapUIRestartNC", { link = "DapUIRestart" })
+			vim.api.nvim_set_hl(0, "DapUIStopNC", { link = "DapUIStop" })
+			vim.api.nvim_set_hl(0, "DapUIUnavailableNC", { link = "DapUIUnavailable" })
+			vim.api.nvim_set_hl(0, "DapUIStepOverNC", { link = "DapUIStepOver" })
+			vim.api.nvim_set_hl(0, "DapUIStepIntoNC", { link = "DapUIStepInto" })
+			vim.api.nvim_set_hl(0, "DapUIStepBackNC", { link = "DapUIStepBack" })
+			vim.api.nvim_set_hl(0, "DapUIStepOutNC", { link = "DapUIStepOut" })
 		end,
 	},
 }
