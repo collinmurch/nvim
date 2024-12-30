@@ -41,7 +41,7 @@ return {
 				map("n", "[d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 				map("n", "]d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
 				map("n", "gd", builtin.lsp_definitions, { desc = "Goto definitions" })
-				map("n", "gA", builtin.lsp_references, { desc = "Goto references" })
+				map("n", "gr", builtin.lsp_references, { desc = "Goto references" })
 				map("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
 				map("n", "<leader>a", vim.lsp.buf.code_action, { desc = "Perform code action" })
 				map("n", "<leader>.", fix_all, { desc = "Fix all code actions" })
