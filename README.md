@@ -5,10 +5,9 @@ Initially forked from [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kick
 Requirements:
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- Some nerd font, probably
+- Some font with ligatures
 
-
-Installation example (macOS; post-requirements):
+Installation example (macOS; post-requirements-installation):
 
 
 ```bash
