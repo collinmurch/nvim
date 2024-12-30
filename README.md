@@ -5,12 +5,13 @@ Initially forked from [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kick
 Requirements:
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- Some font with ligatures
+- Any font with ligatures
 
-Installation example (macOS; post-requirements-installation):
+Installation example (macOS):
 
 
 ```bash
+brew install ripgrep
 git clone https://github.com/collinmurch/nvim ~/.config/nvim
 nvim
 ```
