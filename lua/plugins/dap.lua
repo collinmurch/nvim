@@ -32,21 +32,22 @@ return {
 			vim.keymap.set("n", "<leader>dr", dap.restart, { desc = "Restart" })
 
 			-- DAP listeners
-			dap.listeners.before.attach.dapui_config = function()
+
+			dap.listeners.after.attach.dapui_config = function()
 				ui.open()
 			end
-			dap.listeners.before.launch.dapui_config = function()
+			dap.listeners.after.launch.dapui_config = function()
 				ui.open()
 			end
-			dap.listeners.before.event_terminated.dapui_config = function()
-				ui.close()
+			dap.listeners.after.event_terminated.dapui_config = function()
+				ui.close({ reset = true })
 			end
-			dap.listeners.before.event_exited.dapui_config = function()
-				ui.close()
+			dap.listeners.after.event_exited.dapui_config = function()
+				ui.close({ reset = true })
 			end
 
 			-- Theming
-			vim.fn.sign_define("DapBreakpoint", { text = "◌" })
+			vim.fn.sign_define("DapBreakpoint", { text = "◌", texthl = "DiagnosticError" })
 
 			vim.api.nvim_set_hl(0, "DapUIScope", { link = "DiagnosticInfo" })
 			vim.api.nvim_set_hl(0, "DapUIValue", { link = "DiagnosticFloatingInfo" })
