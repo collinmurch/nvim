@@ -5,7 +5,7 @@ Initially forked from [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kick
 Requirements:
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- Some nerd font, or just one with ligatures if you're using [Ghostty](https://ghostty.org)
+- Some nerd font, (not needed if you're using [Ghostty](https://ghostty.org))
 
 Installation example (macOS):
 
