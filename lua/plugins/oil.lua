@@ -21,8 +21,15 @@ return {
 		win_options = {
 			wrap = true,
 		},
+		use_default_keymaps = false,
 		keymaps = {
+			["<CR>"] = "actions.select",
 			["<Esc>"] = "actions.close",
+			["-"] = { "actions.parent", mode = "n" },
+			["<leader>k"] = { "actions.preview", desc = "Preview file" },
+			["<leader>r"] = { "actions.refresh", desc = "Refresh directory" },
+			["<leader>."] = { "actions.toggle_hidden", desc = "Toggle hidden files" },
+			["<leader>g"] = { "actions.toggle_trash", desc = "Toggle trash" },
 		},
 	},
 	keys = {
