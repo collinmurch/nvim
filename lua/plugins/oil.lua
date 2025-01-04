@@ -21,6 +21,9 @@ return {
 		win_options = {
 			wrap = true,
 		},
+		keymaps = {
+			["<Esc>"] = "actions.close",
+		},
 	},
 	keys = {
 		{

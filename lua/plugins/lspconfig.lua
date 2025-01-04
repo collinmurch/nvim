@@ -27,6 +27,8 @@ return {
 			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 			callback = function()
 				local map = vim.keymap.set
+
+				-- tbd whether or not I use this
 				local fix_all = function()
 					vim.lsp.buf.code_action({
 						context = {
