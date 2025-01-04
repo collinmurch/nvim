@@ -32,7 +32,6 @@ return {
 			vim.keymap.set("n", "<leader>dr", dap.restart, { desc = "Restart" })
 
 			-- DAP listeners
-
 			dap.listeners.after.attach.dapui_config = function()
 				ui.open()
 			end
