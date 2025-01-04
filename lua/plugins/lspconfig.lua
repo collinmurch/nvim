@@ -1,11 +1,30 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
+		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
+		-- All keys listed will be auto-installed
 		local servers = {
+			ruff = {},
+			zls = {},
+			lua_ls = {
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { "vim" },
+						},
+						workspace = {
+							library = vim.api.nvim_get_runtime_file("", true),
+						},
+						telemetry = {
+							enable = false,
+						},
+					},
+				},
+			},
 			gopls = {
 				settings = {
 					gopls = {
@@ -30,8 +49,11 @@ return {
 
 				-- tbd whether or not I use this
 				local fix_all = function()
+					local diagnostics = vim.diagnostic.get(0)
+
 					vim.lsp.buf.code_action({
 						context = {
+							diagnostics = diagnostics,
 							only = { "source.organizeImports", "source.fixAll" },
 						},
 						apply = true,
@@ -54,7 +76,12 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
+		-- Must ensure mason is setup by Lazy first
+		require("mason").setup()
+
 		require("mason-lspconfig").setup({
+			ensure_installed = vim.tbl_keys(servers),
+			automatic_installation = true,
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
