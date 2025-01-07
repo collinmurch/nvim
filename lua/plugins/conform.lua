@@ -13,6 +13,7 @@ return {
 			css = { "prettierd" },
 			json = { "prettierd" },
 			yaml = {},
+			markdown = { "prettierd" },
 			svelte = { "prettierd" },
 			javascript = { "prettierd" },
 			typescript = { "prettierd" },
