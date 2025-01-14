@@ -31,8 +31,8 @@ vim.opt.signcolumn = "yes"
 -- Decrease update time
 vim.opt.updatetime = 200
 
--- Displays which-key popup almost immediately
-vim.opt.timeoutlen = 0
+-- Timeout len should be long for some plugins (mini.surround, etc.)
+vim.opt.timeoutlen = 500
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true

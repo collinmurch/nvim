@@ -1,4 +1,6 @@
 require("opt")
+require("auto")
+require("keymap")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -12,6 +14,3 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-
-require("auto")
-require("keymap")
