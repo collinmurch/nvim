@@ -1,36 +1,38 @@
 return {
-	"hrsh7th/nvim-cmp",
-	event = "InsertEnter",
+	"saghen/blink.cmp",
+	version = "*",
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-path",
+		"rafamadriz/friendly-snippets",
 		"folke/lazydev.nvim",
 	},
-	config = function()
-		local cmp = require("cmp")
-		cmp.setup({
-			completion = { completeopt = "menu,menuone,noinsert" },
-
-			mapping = cmp.mapping.preset.insert({
-				["<C-n>"] = cmp.mapping.select_next_item(),
-				["<C-p>"] = cmp.mapping.select_prev_item(),
-				["<C-y>"] = cmp.mapping.confirm({ select = true }),
-				["<Tab>"] = cmp.mapping.select_next_item(),
-				["<S-Tab>"] = cmp.mapping.select_prev_item(),
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-				-- Scroll the documentation window [b]ack / [f]orward
-				["<C-b>"] = cmp.mapping.scroll_docs(-4),
-				["<C-f>"] = cmp.mapping.scroll_docs(4),
-			}),
-			sources = {
-				{
-					name = "lazydev",
-					group_index = 0,
-				},
-				{ name = "nvim_lsp" },
-				{ name = "path" },
+	opts = {
+		keymap = {
+			preset = "default",
+			mappings = {
+				["<Tab>"] = "select_next",
+				["<S-Tab>"] = "select_prev",
+				["<CR>"] = "accept",
 			},
-		})
-	end,
+		},
+		completion = {
+			documentation = { auto_show = false },
+		},
+		sources = {
+			default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+			providers = {
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					score_offset = 100,
+				},
+			},
+		},
+		fuzzy = {
+			implementation = "prefer_rust_with_warning",
+			prebuilt_binaries = {
+				force_version = "v1.0.0",
+			},
+		},
+	},
+	opts_extend = { "sources.default" },
 }
