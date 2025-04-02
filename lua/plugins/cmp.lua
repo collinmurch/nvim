@@ -1,6 +1,6 @@
 return {
 	"saghen/blink.cmp",
-	version = "*",
+	version = "1.*",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 		"folke/lazydev.nvim",
@@ -12,7 +12,7 @@ return {
 			["<CR>"] = { "accept", "fallback" },
 		},
 		completion = {
-			documentation = { auto_show = false },
+			documentation = { auto_show = true },
 		},
 		sources = {
 			default = { "lazydev", "lsp", "path", "snippets", "buffer" },
@@ -31,5 +31,4 @@ return {
 			},
 		},
 	},
-	opts_extend = { "sources.default" },
 }
