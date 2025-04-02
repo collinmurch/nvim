@@ -8,11 +8,8 @@ return {
 	opts = {
 		keymap = {
 			preset = "default",
-			mappings = {
-				["<Tab>"] = "select_next",
-				["<S-Tab>"] = "select_prev",
-				["<CR>"] = "accept",
-			},
+			["<Tab>"] = { "accept", "fallback" },
+			["<CR>"] = { "accept", "fallback" },
 		},
 		completion = {
 			documentation = { auto_show = false },
