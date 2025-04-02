@@ -6,7 +6,7 @@ return {
 		"saghen/blink.cmp",
 	},
 	config = function()
-		-- All keys listed will be auto-installed
+		-- All keys in the below table will be auto-installed
 		local servers = {
 			ruff = {},
 			zls = {},
