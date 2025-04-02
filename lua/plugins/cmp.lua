@@ -1,6 +1,5 @@
 return {
 	"saghen/blink.cmp",
-	version = "1.*",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 		"folke/lazydev.nvim",
@@ -20,14 +19,14 @@ return {
 				lazydev = {
 					name = "LazyDev",
 					module = "lazydev.integrations.blink",
-					score_offset = 100,
 				},
 			},
 		},
 		fuzzy = {
 			implementation = "prefer_rust_with_warning",
+			use_frecency = true,
 			prebuilt_binaries = {
-				force_version = "v1.0.0",
+				force_version = "v1.0.0", -- I don't know why this is needed, version should be inferred
 			},
 		},
 	},
