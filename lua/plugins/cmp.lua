@@ -14,7 +14,10 @@ return {
 			documentation = { auto_show = true },
 		},
 		sources = {
-			default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "path", "snippets", "buffer" },
+			per_filetype = {
+				lua = { "lazydev" },
+			},
 			providers = {
 				lazydev = {
 					name = "LazyDev",
@@ -26,7 +29,7 @@ return {
 			implementation = "prefer_rust_with_warning",
 			use_frecency = true,
 			prebuilt_binaries = {
-			    -- I don't know why this is needed, version should be inferred
+				-- I don't know why this is needed, version should be inferred
 				force_version = "v1.0.0",
 			},
 		},
