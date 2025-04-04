@@ -77,6 +77,22 @@ return {
 			adapters = {
 				require("neotest-go"),
 			},
+			icons = {
+				failed = "✘",
+				passed = "✓",
+				running = "◌",
+				skipped = "-",
+				unknown = "?",
+			},
+			highlights = {
+				failed = "DiagnosticError",
+				passed = "DiagnosticOk",
+				running = "DiagnosticInfo",
+				skipped = "Comment",
+				test = "DiagnosticHint",
+				namespace = "DiagnosticInfo",
+				focused = "DiagnosticWarn",
+			},
 		})
 	end,
 }
