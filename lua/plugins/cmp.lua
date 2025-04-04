@@ -1,7 +1,6 @@
 return {
 	"saghen/blink.cmp",
 	dependencies = {
-		"rafamadriz/friendly-snippets",
 		"folke/lazydev.nvim",
 	},
 	opts = {
@@ -14,7 +13,7 @@ return {
 			documentation = { auto_show = true },
 		},
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "path", "buffer" },
 			per_filetype = {
 				lua = { "lazydev" },
 			},
