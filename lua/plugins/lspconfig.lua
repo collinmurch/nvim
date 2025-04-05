@@ -86,6 +86,23 @@ return {
 					workingDirectory = { mode = "auto" },
 				},
 			},
+			svelte = {
+				settings = {
+					svelte = {
+						plugin = {
+							typescript = {
+								enable = true,
+							},
+							css = true,
+							svelte = {
+								defaultScriptLanguage = "typescript",
+								useNewTransformation = true,
+							},
+						},
+					},
+				},
+				filetypes = { "svelte" },
+			},
 		}
 
 		vim.api.nvim_create_autocmd("LspAttach", {
