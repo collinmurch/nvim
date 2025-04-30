@@ -55,7 +55,7 @@ return {
 					},
 				},
 			},
-			tsserver = {
+			vtsls = {
 				settings = {
 					typescript = {
 						inlayHints = {
