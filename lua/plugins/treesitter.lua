@@ -3,8 +3,8 @@ return {
 	build = ":TSUpdate",
 	main = "nvim-treesitter.configs",
 	opts = {
-	    -- Doesn't automatically install for Svelte Typescript files, breaking highlighting
-	    ensure_installed = { 'typescript' },
+	    -- Base lang doesn't install for Svelte which breaks highlighting
+	    ensure_installed = { 'javascript', 'typescript' },
 		highlight = {
 			enable = true,
 			additional_vim_regex_highlighting = false,
