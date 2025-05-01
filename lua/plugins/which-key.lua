@@ -16,7 +16,6 @@ return {
 			{ "<leader>?", desc = "Search buffers" },
 			{ "<leader>a", desc = "Code action" },
 			{ "<leader>r", desc = "Rename" },
-			{ "<leader>.", desc = "Fix all" },
 			{ "<leader>,", desc = "Toggle whitespace" },
 			{ "<leader>c", desc = "Comment" },
 			{ "<leader>p", desc = "Paste" },
@@ -27,4 +26,3 @@ return {
 		},
 	},
 }
-
