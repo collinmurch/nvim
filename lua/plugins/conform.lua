@@ -8,18 +8,19 @@ return {
 	cmd = { "ConformInfo" },
 	init = function()
 		-- All keys listed will be auto-installed
+		-- We handle JS/TS/JSX/TSX with eslint code actions in lspconfig.lua
 		local formatters_by_ft = {
 			lua = { "stylua" },
-			css = { "prettierd" },
-			json = { "prettierd" },
+			css = { "biome" },
+			json = { "biome" },
 			yaml = {},
-			markdown = { "prettierd" },
-			svelte = { "prettierd" },
-			javascript = { "prettierd" },
-			typescript = { "prettierd" },
-			javascriptreact = { "prettierd" },
-			typescriptreact = { "prettierd" },
-			graphql = { "prettierd" },
+			typescript = {},
+			javascript = {},
+			javascriptreact = {},
+			typescriptreact = {},
+			markdown = { "biome" },
+			svelte = { "svelte-language-server" },
+			graphql = { "biome" },
 			sh = { "shfmt" },
 		}
 

@@ -31,10 +31,7 @@ return {
 						gofumpt = true,
 						buildFlags = { "-tags=integrationtest,integration,manual,wireinject" },
 						hints = {
-							assignVariableTypes = true,
-							compositeLiteralFields = true,
 							constantValues = true,
-							functionTypeParameters = true,
 							parameterNames = true,
 						},
 					},
@@ -107,19 +104,22 @@ return {
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
-			callback = function()
+			callback = function(event)
 				local map = vim.keymap.set
+				local client = vim.lsp.get_client_by_id(event.data.client_id)
 
-				-- tbd whether or not I use this
-				local fix_all = function()
-					local diagnostics = vim.diagnostic.get(0)
-
-					vim.lsp.buf.code_action({
-						context = {
-							diagnostics = diagnostics,
-							only = { "source.organizeImports", "source.fixAll" },
-						},
-						apply = true,
+				-- Automatically run fixAll.eslint and organizeImports on save for ESLint
+				if client and client.name == "eslint" then
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						buffer = event.buf,
+						callback = function()
+							vim.lsp.buf.code_action({
+								context = {
+									only = { "source.organizeImports", "source.fixAll.eslint" },
+								},
+								apply = true,
+							})
+						end,
 					})
 				end
 
@@ -129,7 +129,6 @@ return {
 				map("n", "gr", vim.lsp.buf.references, { desc = "Goto references" })
 				map("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
 				map("n", "<leader>a", vim.lsp.buf.code_action, { desc = "Perform code action" })
-				map("n", "<leader>.", fix_all, { desc = "Fix all code actions" })
 				map("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename symbol" })
 			end,
 		})
