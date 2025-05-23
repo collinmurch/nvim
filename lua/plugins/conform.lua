@@ -11,15 +11,15 @@ return {
         local formatters_by_ft = {
             lua             = { "stylua" },
             svelte          = { "svelte-language-server" },
-            css             = { "biome" },
-            json            = { "biome" },
+            css             = { "prettierd" },
+            json            = { "prettierd" },
             yaml            = {},
             javascript      = { "eslint_d" },
             typescript      = { "eslint_d" },
             javascriptreact = { "eslint_d" },
             typescriptreact = { "eslint_d" },
-            markdown        = { "biome" },
-            graphql         = { "biome" },
+            markdown        = { "prettierd" },
+            graphql         = { "prettierd" },
             sh              = { "shfmt" },
         }
 
