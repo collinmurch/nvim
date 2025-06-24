@@ -11,9 +11,11 @@ vim.opt.mouse = "a"
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
--- Default tab width to 4 spaces
-vim.opt.tabstop = 4
+-- Use spaces for indentation
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 
 -- Enable break indent
 vim.opt.breakindent = true
