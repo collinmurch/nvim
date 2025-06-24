@@ -14,6 +14,16 @@ map("x", "<leader>p", [["_dP]], { desc = "Paste" })
 -- Consistent which-key description with visual mode
 map("n", "<leader>p", "p", { desc = "Paste" })
 
+-- Yank to system clipboard
+map("n", "<leader>y", function()
+	vim.cmd('normal! "+yy')
+	vim.notify("Yanked line to system clipboard")
+end, { desc = "Yank line to system clipboard" })
+map("v", "<leader>y", function()
+	vim.cmd('normal! "+y')
+	vim.notify("Yanked selection to system clipboard")
+end, { desc = "Yank selection to system clipboard" })
+
 map("n", "<leader>,", function()
 	vim.opt.list = not vim.opt.list._value
 end, { desc = "Toggle whitespace characters" })

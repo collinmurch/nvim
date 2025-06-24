@@ -19,6 +19,7 @@ return {
 			{ "<leader>,", desc = "Toggle whitespace" },
 			{ "<leader>c", desc = "Comment" },
 			{ "<leader>p", desc = "Paste" },
+			{ "<leader>y", desc = "Yank to system clipboard" },
 		},
 		icons = {
 			rules = false,

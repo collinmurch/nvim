@@ -50,5 +50,5 @@ vim.opt.scrolloff = 10
 -- Go to previous/next line with h,l,left arrow and right arrow
 vim.opt.whichwrap:append("<>[]hl")
 
--- Use system clipboard
+-- Use nvim register (not system clipboard)
 vim.opt.clipboard = "unnamedplus"
