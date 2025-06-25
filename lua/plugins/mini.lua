@@ -8,6 +8,10 @@ return {
 		require("mini.surround").setup()
 
 		-- Autopairs
-		require("mini.pairs").setup()
+		require("mini.pairs").setup({
+			mappings = {
+				["`"] = false,
+			},
+		})
 	end,
 }
