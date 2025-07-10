@@ -5,6 +5,9 @@ vim.g.maplocalleader = " "
 -- Show line numbers
 vim.opt.number = true
 
+-- Highlight the current line
+vim.opt.cursorline = true
+
 -- Enable mouse mode
 vim.opt.mouse = "a"
 
@@ -51,3 +54,6 @@ vim.opt.scrolloff = 10
 
 -- Go to previous/next line with h,l,left arrow and right arrow
 vim.opt.whichwrap:append("<>[]hl")
+
+-- Enable editorconfig support
+vim.g.editorconfig = true
