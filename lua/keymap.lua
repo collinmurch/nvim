@@ -17,3 +17,11 @@ map("n", "<leader>p", "p", { desc = "Paste" })
 map("n", "<leader>,", function()
 	vim.opt.list = not vim.opt.list._value
 end, { desc = "Toggle whitespace characters" })
+
+-- Git link functionality (matches Helix config)
+map("n", "<leader>gl", function()
+	local filename = vim.fn.expand("%")
+	local line_number = vim.fn.line(".")
+	local cmd = string.format("git-link.py %s %d", filename, line_number)
+	vim.fn.system(cmd)
+end, { desc = "Git link" })
