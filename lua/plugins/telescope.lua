@@ -34,7 +34,6 @@ return {
 		telescope.setup({
 			defaults = {
 				selection_caret = "➤ ",
-				file_ignore_patterns = { "node_modules", ".git/", "dist/", "build/" },
 				results_title = false,
 				sorting_strategy = "ascending",
 				layout_config = {
@@ -57,12 +56,11 @@ return {
 			},
 			pickers = {
 				find_files = {
-					hidden = true,
-					find_command = { "fd", "--type", "f", "--hidden", "--follow", "--exclude", ".git", "--exclude", "node_modules" },
+					find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
 				},
 				live_grep = {
 					additional_args = function()
-						return { "--hidden", "--follow", "--glob", "!.git/*", "--glob", "!node_modules/*" }
+						return { "--hidden" }
 					end,
 				},
 				buffers = {
