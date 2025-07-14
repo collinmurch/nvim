@@ -8,7 +8,14 @@ return {
 	config = function()
 		-- All keys in the below table will be auto-installed
 		local servers = {
-			ruff = {},
+			ruff = {
+				init_options = {
+					settings = {
+						organizeImports = true,
+						fixAll = true,
+					},
+				},
+			},
 			zls = {},
 			lua_ls = {
 				settings = {
@@ -52,37 +59,8 @@ return {
 					},
 				},
 			},
-			vtsls = {
-				settings = {
-					typescript = {
-						inlayHints = {
-							includeInlayParameterNameHints = "all",
-							includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-							includeInlayFunctionParameterTypeHints = true,
-							includeInlayVariableTypeHints = true,
-							includeInlayPropertyDeclarationTypeHints = true,
-							includeInlayFunctionLikeReturnTypeHints = true,
-							includeInlayEnumMemberValueHints = true,
-						},
-					},
-					javascript = {
-						inlayHints = {
-							includeInlayParameterNameHints = "all",
-							includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-							includeInlayFunctionParameterTypeHints = true,
-							includeInlayVariableTypeHints = true,
-							includeInlayPropertyDeclarationTypeHints = true,
-							includeInlayFunctionLikeReturnTypeHints = true,
-							includeInlayEnumMemberValueHints = true,
-						},
-					},
-				},
-			},
-			eslint = {
-				settings = {
-					workingDirectory = { mode = "auto" },
-				},
-			},
+			vtsls = {},
+			biome = {},
 			svelte = {
 				settings = {
 					svelte = {

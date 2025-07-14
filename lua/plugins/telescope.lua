@@ -8,6 +8,7 @@ return {
 			build = "make",
 		},
 		{ "nvim-telescope/telescope-ui-select.nvim" },
+		{ "nvim-telescope/telescope-dap.nvim" },
 		{ "echasnovski/mini.icons" },
 	},
 	keys = {
@@ -89,7 +90,7 @@ return {
 			},
 		})
 
-		for _, ext in ipairs({ "fzf", "ui-select" }) do
+		for _, ext in ipairs({ "fzf", "ui-select", "dap" }) do
 			pcall(telescope.load_extension, ext)
 		end
 	end,

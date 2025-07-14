@@ -37,8 +37,14 @@ return {
 				ui.close({ reset = true })
 			end, { desc = "Stop debugging" })
 			vim.keymap.set("n", "<leader>dl", function()
-				require("dapui").float_element("breakpoints", { enter = true })
+				require("telescope").extensions.dap.list_breakpoints()
 			end, { desc = "List breakpoints" })
+			vim.keymap.set("n", "<leader>dv", function()
+				require("telescope").extensions.dap.variables()
+			end, { desc = "List variables" })
+			vim.keymap.set("n", "<leader>df", function()
+				require("telescope").extensions.dap.frames()
+			end, { desc = "List frames" })
 			vim.keymap.set("n", "<leader>dn", dap.continue, { desc = "Start/continue debug" })
 
 			-- DAP listeners
