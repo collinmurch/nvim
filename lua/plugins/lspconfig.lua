@@ -59,8 +59,12 @@ return {
 					},
 				},
 			},
-			vtsls = {},
-			biome = {},
+			vtsls = {
+				filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+			},
+			biome = {
+				filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "jsonc" },
+			},
 			svelte = {
 				settings = {
 					svelte = {
