@@ -34,9 +34,12 @@ return {
 		telescope.setup({
 			defaults = {
 				selection_caret = "➤ ",
+				file_ignore_patterns = { "node_modules", ".git/", "dist/", "build/" },
+				results_title = false,
+				sorting_strategy = "ascending",
 				layout_config = {
 					horizontal = {
-						prompt_position = "bottom",
+						prompt_position = "top",
 						preview_width = 0.55,
 					},
 					width = 0.87,
@@ -55,11 +58,11 @@ return {
 			pickers = {
 				find_files = {
 					hidden = true,
-					find_command = { "fd", "--type", "f", "--hidden", "--follow", "--exclude", ".git" },
+					find_command = { "fd", "--type", "f", "--hidden", "--follow", "--exclude", ".git", "--exclude", "node_modules" },
 				},
 				live_grep = {
 					additional_args = function()
-						return { "--hidden", "--follow", "--glob", "!.git/*" }
+						return { "--hidden", "--follow", "--glob", "!.git/*", "--glob", "!node_modules/*" }
 					end,
 				},
 				buffers = {
@@ -76,6 +79,7 @@ return {
 					override_generic_sorter = true,
 					override_file_sorter = true,
 					case_mode = "smart_case",
+					fuzzy = true,
 				},
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
