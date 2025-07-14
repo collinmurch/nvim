@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Auto-reload files when changed externally
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
 	group = vim.api.nvim_create_augroup("AutoReload", { clear = true }),
 	callback = function()
 		if vim.fn.mode() ~= "c" then

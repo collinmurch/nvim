@@ -36,6 +36,10 @@ return {
 				selection_caret = "➤ ",
 				results_title = false,
 				sorting_strategy = "ascending",
+				preview = {
+					timeout = 500,
+					filesize_limit = 1,
+				},
 				layout_config = {
 					horizontal = {
 						prompt_position = "top",

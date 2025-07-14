@@ -2,7 +2,7 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		opts = {
-			update_debounce = 10,
+			update_debounce = 100,
 
 			on_attach = function(bufnr)
 				local gitsigns = require("gitsigns")
