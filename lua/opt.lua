@@ -57,3 +57,6 @@ vim.opt.whichwrap:append("<>[]hl")
 
 -- Enable editorconfig support
 vim.g.editorconfig = true
+
+-- Auto-reload files when changed externally
+vim.opt.autoread = true

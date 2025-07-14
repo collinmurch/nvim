@@ -10,3 +10,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 	desc = "Highlight when copying text and sync yanks to system clipboard",
 })
+
+-- Auto-reload files when changed externally
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+	group = vim.api.nvim_create_augroup("AutoReload", { clear = true }),
+	callback = function()
+		if vim.fn.mode() ~= "c" then
+			vim.cmd("checktime")
+		end
+	end,
+	desc = "Check for external file changes and auto-reload",
+})
