@@ -41,15 +41,6 @@ return {
 					timeout = 500,
 					filesize_limit = 1,
 				},
-				layout_config = {
-					horizontal = {
-						prompt_position = "top",
-						preview_width = 0.55,
-					},
-					width = 0.87,
-					height = 0.80,
-					preview_cutoff = 120,
-				},
 				mappings = {
 					i = {
 						["<C-j>"] = actions.move_selection_next,
@@ -62,11 +53,6 @@ return {
 			pickers = {
 				find_files = {
 					find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
-				},
-				live_grep = {
-					additional_args = function()
-						return { "--hidden" }
-					end,
 				},
 				buffers = {
 					sort_lastused = true,
