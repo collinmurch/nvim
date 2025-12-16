@@ -1,5 +1,7 @@
 return {
 	"saghen/blink.cmp",
+	-- Stay on a tagged release so prebuilt fuzzy binaries match the Lua side.
+	version = "v1.8.0",
 	dependencies = {
 		"folke/lazydev.nvim",
 	},
@@ -26,10 +28,8 @@ return {
 		},
 		fuzzy = {
 			implementation = "prefer_rust_with_warning",
-			use_frecency = true,
-			prebuilt_binaries = {
-				-- I don't know why this is needed, version should be inferred
-				force_version = "v1.0.0",
+			frecency = {
+				enabled = true,
 			},
 		},
 	},
