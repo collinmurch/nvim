@@ -21,5 +21,5 @@
 !lua/plugins/telescope.lua
 !lua/plugins/treesitter.lua
 !lua/plugins/which-key.lua
+
 lua/local.lua
-.DS_Store
