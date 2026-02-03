@@ -9,8 +9,8 @@ Requirements:
 
 Tracking policy:
 
-- This repo uses an allowlist `.gitignore`. Only files explicitly un-ignored are tracked.
-- Put machine-specific settings in `lua/local.lua` (intentionally ignored).
+- This repo uses an allowlist `.gitignore`; only files explicitly un-ignored are tracked
+- Put machine-specific settings in `lua/local.lua` (intentionally ignored)
 
 Installation example (macOS):
 
