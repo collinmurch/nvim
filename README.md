@@ -1,6 +1,6 @@
 # neovim config
 
-Initially forked from [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) (formerly tjdevries/kickstart.nvim); I moved to a separate repo to get rid of PR/rebase buttons showing on GitHub since this has diverged a ton
+Initially forked from [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) (formerly tjdevries/kickstart.nvim); I moved to a separate repo to get rid of PR/rebase buttons showing on GitHub since this has diverged a ton.
 
 Requirements:
 
